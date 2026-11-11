@@ -1,0 +1,26 @@
+services:
+  minecraft:
+    image: rg.fr-par.scw.cloud/public-champatux/sio-versus:0
+    #build: ./minecraft/
+    #volumes:
+    #  - world:/srv/world:Z
+    ports:
+      - 25565:25565
+    security_opt:
+      - label=disable
+
+  telegraf:
+    image: telegraf:1.40.3-alpine
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    env_file:
+      - .env
+
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1370 
+
+#volumes:
+#  world:
