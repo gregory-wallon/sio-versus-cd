@@ -6,10 +6,10 @@ Exemple pédagogique de développement et de déploiement via Docker. Dépôt pu
 
 ### Cloner le dépôt
 
-Déployez les fichiers sur votre serveur de production. Le plus simple est d'utiliser la commande `git clone` :
+Déployez les fichiers sur votre serveur de production. Le plus simple est de télécharger l'archive du porjet via `wget` :
 
 ```bash
-git clone https://github.com/gregory-wallon/sio-versus-cd.git
+wget "https://codeload.github.com/gregory-wallon/sio-versus-cd/zip/refs/heads/main" -O r.zip && unzip r.zip 
 ```
 
 > NB : une amélioration possible serait de déployer ces fichiers via Ansible.
