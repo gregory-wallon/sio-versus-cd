@@ -16,11 +16,17 @@ services:
     env_file:
       - .env
 
+
 networks:
   default:
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: fd80:f871:9a40::/64
     driver: bridge
     driver_opts:
       com.docker.network.driver.mtu: 1370 
+
 
 #volumes:
 #  world:

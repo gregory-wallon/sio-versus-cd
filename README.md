@@ -33,6 +33,12 @@ Dans le fichier `docker-compose.yml`, adaptez le port public selon vos besoins.
 
 > NB : il est possible d'automatiser le choix du port via Ansible.
 
+### Configurer la NATv6
+
+```bash
+ip6tables -t nat -I POSTROUTING -o enp8s0 -s fd80:f871:9a40::/64 -j MASQUERADE
+```
+
 ### Lancer le projet
 
 Pour lancer le projet :
